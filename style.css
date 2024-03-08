@@ -72,6 +72,8 @@ body{
 }
 
 .button{
+    height: 2rem;
+    width: 6rem;
   align-items: center;
   background-color: #fff;
   border-radius: 24px;

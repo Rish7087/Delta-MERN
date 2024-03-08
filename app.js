@@ -43,24 +43,32 @@ function levelUp() {
     console.log(gameSeq);
     btnFlash(randombtn);
 }
-
 function check(idx) {
     if (userSeq[idx] === gameSeq[idx]) {
         if (userSeq.length === gameSeq.length) {
             setTimeout(levelUp, 1000);
         }
     } else {
-        h2.innerHTML = `Game over! Your score is <b> ${level} </b>  <br> Press any key to restart`;
+        h2.innerHTML = `Game over! Your score is <b> ${level} </b>  <br> Press <button id="restart" class="button">RESTART</button> to restart`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function () {
             document.querySelector("body").style.backgroundColor = "#EEE7DA";
+            restartButton = document.getElementById("restart"); // Corrected button ID
+            restartButton.addEventListener("click", function () {
+                if (!started) {
+                    console.log("Game is started!");
+                    started = true;                   
+                    levelUp();
+                }
+            });
+            if (level > highScore) {
+                highScore = level;
+            }
+            reset();
         }, 100);
-        if (level > highScore) {
-            highScore = level;
-        }
-        reset();
     }
 }
+
 
 function btnPress() {
     let btn = this;
