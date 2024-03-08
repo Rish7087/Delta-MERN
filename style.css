@@ -1,26 +1,52 @@
 body{
+    background-color: #EEE7DA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #EEE7DA;
 }
+
 .btn-container{
-    height: 500px;
-    width: 500px;
+    height: 60vh;
+    width: 60vw;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items:center;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 .btn{
-    height: 200px;
-    width: 200px;
-    border: 10px solid black;
-    border-radius: 20%;
+    height: 10rem;
+    width: 10rem;
+    border: 0.2rem solid black;
+    border-radius: 50%;
 }
-
+@media (max-width: 600px) {
+    .btn-container{
+        height: 30vh;
+        width: 60vw;
+    }
+    .btn {
+        height: 5rem; 
+        width: 5rem;
+    }
+}
+@media ( min-width: 850px) {
+    .btn-container{
+        height: 70vh;
+        width: 40vw;
+    }
+    .btn {
+        height: 12rem; 
+        width: 12rem;
+    }
+}
 .red{
     background-color: #FFC0D9;
 }
@@ -43,4 +69,10 @@ body{
 
 .userFlash{
     background-color: green;
+}
+
+.button{
+  align-items: center;
+  background-color: #fff;
+  border-radius: 24px;
 }
